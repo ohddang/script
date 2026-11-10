@@ -138,6 +138,14 @@
     .toc-item strong { display: block; font-size: 17px; }
     .toc-item small { display: block; margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.7; }
     .toc-item[aria-current] { border-color: var(--accent); }
+    .speech-cue { color: var(--accent); font-size: .85em; font-weight: 650; white-space: nowrap; }
+    [data-mode="dark"] .speech-cue { color: #b4d4bc; }
+    .speech-emphasis { font-weight: 800; background: linear-gradient(transparent 58%, var(--highlight) 58%); }
+    .speech-guide { margin: 18px 0; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 13px; line-height: 1.8; }
+    .speech-guide summary { cursor: pointer; font-weight: 650; }
+    .speech-guide dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin-bottom: 0; }
+    .speech-guide dt { font-weight: 650; }
+    .speech-guide dd { margin: 0; }
     .navigation .nav-button { position: fixed; top: var(--reader-top, 115px); bottom: max(75px, calc(env(safe-area-inset-bottom) + 60px)); z-index: 2; width: 12%; max-width: 70px; border: 0; border-radius: 0; background: transparent; font-size: 0; padding: 0; touch-action: pan-y; }
     #previous { left: 0; }
     #next { right: 0; }
@@ -209,6 +217,20 @@
     <section class="library" id="library" aria-labelledby="libraryTitle">
       <h1 id="libraryTitle">대본 목차</h1>
       <p>주제와 내용을 살펴보고 읽을 대본을 선택하세요.</p>
+      <details class="speech-guide">
+        <summary>발표 기호 안내</summary>
+        <p>기호는 소리 내어 읽지 않고, 호흡과 말투를 조절하는 표시로 사용하세요.</p>
+        <dl>
+          <dt>/</dt><dd>짧게 호흡</dd>
+          <dt>//</dt><dd>길게 멈춤</dd>
+          <dt>**단어**</dt><dd>강하게 강조</dd>
+          <dt>↑</dt><dd>억양 올리기</dd>
+          <dt>↓</dt><dd>억양 내리기</dd>
+          <dt>[천천히]</dt><dd>속도 낮추기</dd>
+          <dt>[또렷하게]</dt><dd>발음 강조</dd>
+          <dt>[미소]</dt><dd>부드러운 표정과 어조</dd>
+        </dl>
+      </details>
       <label class="visually-hidden" for="scriptSearch">주제, 제목, 본문 검색</label>
       <input class="search" id="scriptSearch" type="search" placeholder="주제, 제목, 본문 검색" autocomplete="off">
       <div id="contentsList"></div>
@@ -221,9 +243,9 @@
     <section class="script-area slide" id="slide-01" data-topic="발표 소개" hidden>
       <h1 class="script-title">인사와 핵심 메시지</h1>
       <div class="script-text">
-        <p>안녕하십니까. 이번 사업의 PM을 맡은 셈웨어 오영곤입니다.</p>
-        <p>학생이 값을 바꿨는데, 화면에는 미리 만든 장면만 나온다면 어떨까요. 그건 시뮬레이션보다는 영상에 가깝습니다.</p>
-        <p>중요한 건 학생이 바꾼 값을 그 자리에서 계산해 보여 주는 겁니다. 저희 셈웨어는 이 계산 기술을 40년간 발전시켜 왔습니다.</p>
+        <p><span class="speech-cue">[미소]</span> 안녕하십니까. <span class="speech-cue">//</span> 이번 사업의 PM을 맡은 셈웨어 오영곤입니다.</p>
+        <p>학생이 값을 바꿨는데, <span class="speech-cue">/</span> 화면에는 미리 만든 장면만 나온다면 어떨까요. <span class="speech-cue">↑</span> <span class="speech-cue">//</span> <span class="speech-cue">//</span> 그건 시뮬레이션보다는 영상에 가깝습니다.</p>
+        <p>중요한 건 학생이 바꾼 값을 <strong class="speech-emphasis">**그 자리에서 계산해 보여 주는**</strong> 겁니다. <span class="speech-cue">//</span> 저희 셈웨어는 이 계산 기술을 40년간 발전시켜 왔습니다.</p>
       </div>
     </section>
 
@@ -232,8 +254,8 @@
       <h1 class="script-title">셈웨어 소개</h1>
       <div class="script-text">
         <p>저희는 과학 시뮬레이션을 전문으로 만드는 회사입니다.</p>
-        <p>과학 전 영역에서 3,000종 이상을 직접 만들었고, 지금은 지능형과학실ON도 운영하고 있습니다.</p>
-        <p>그래서 오늘은 두 가지를 말씀드리려고 합니다. 계산을 얼마나 정확하게 하는지, 그리고 그걸 플랫폼에서 어떻게 운영할지입니다.</p>
+        <p>과학 전 영역에서 3,000종 이상을 직접 만들었고, <span class="speech-cue">/</span> 지금은 지능형과학실ON도 운영하고 있습니다.</p>
+        <p>그래서 오늘은 두 가지를 말씀드리려고 합니다. <span class="speech-cue">//</span> 계산을 얼마나 <strong class="speech-emphasis">**정확하게**</strong> 하는지, <span class="speech-cue">/</span> 그리고 그걸 플랫폼에서 어떻게 운영할지입니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -242,8 +264,8 @@
       <h1 class="script-title">정확한 계산의 중요성</h1>
       <div class="script-text">
         <p>1장, 전략 및 방법론입니다.</p>
-        <p>좋은 시뮬레이션은 정확한 계산에서 출발합니다.</p>
-        <p>이진 부동소수점 연산에서는 0.1 더하기 0.2에도 미세한 오차가 생깁니다.</p>
+        <p>좋은 시뮬레이션은 <strong class="speech-emphasis">**정확한 계산**</strong>에서 출발합니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 이진 부동소수점 연산에서는 0.1 더하기 0.2에도 미세한 오차가 생깁니다.</p>
         <p>저희는 40년간 다듬어 온 엔진으로 이런 오차를 허용 범위 안에서 관리합니다.</p>
       </div>
     </section>
@@ -252,8 +274,8 @@
     <section class="script-area slide" id="slide-04" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">화면·연산·검증의 세 층</h1>
       <div class="script-text">
-        <p>학생에게 보이는 건 화면이지만, 그 뒤에는 계산과 검증이 있습니다. 크게 보면 화면, 연산, 검증, 이렇게 세 층입니다.</p>
-        <p>저희는 보이는 화면부터 보이지 않는 계산과 검증, 기존 시스템과의 연결까지 맡겠습니다.</p>
+        <p>학생에게 보이는 건 화면이지만, <span class="speech-cue">/</span> 그 뒤에는 <strong class="speech-emphasis">**계산과 검증**</strong>이 있습니다. <span class="speech-cue">//</span> 크게 보면 화면, 연산, 검증, 이렇게 세 층입니다.</p>
+        <p>저희는 보이는 화면부터 보이지 않는 계산과 검증, <span class="speech-cue">/</span> 기존 시스템과의 연결까지 맡겠습니다.</p>
       </div>
     </section>
 
@@ -262,8 +284,8 @@
       <h1 class="script-title">사업 목표와 세 가지 과제</h1>
       <div class="script-text">
         <p>이 사업에서 완성해야 할 건, 시뮬레이션 34종만이 아닙니다.</p>
-        <p>이걸 지능형과학실ON과 연결해서, 전국 교실에서 하나의 탐구 환경으로 쓸 수 있게 해야 합니다.</p>
-        <p>그래서 세 가지를 함께 챙기겠습니다. 데이터로 탐구할 수 있어야 하고, 안정적으로 실행돼야 합니다. 플랫폼에 연결한 뒤에도 계속 운영할 수 있어야 합니다.</p>
+        <p>이걸 지능형과학실ON과 연결해서, <span class="speech-cue">/</span> 전국 교실에서 <strong class="speech-emphasis">**하나의 탐구 환경**</strong>으로 쓸 수 있게 해야 합니다.</p>
+        <p>그래서 세 가지를 함께 챙기겠습니다. <span class="speech-cue">//</span> 데이터로 탐구할 수 있어야 하고, <span class="speech-cue">/</span> 안정적으로 실행돼야 합니다. <span class="speech-cue">//</span> 플랫폼에 연결한 뒤에도 계속 운영할 수 있어야 합니다.</p>
       </div>
     </section>
 
@@ -272,8 +294,8 @@
       <h1 class="script-title">사업의 다섯 가지 특성</h1>
       <div class="script-text">
         <p>이 사업은 챙겨야 할 조건이 다섯 가지입니다.</p>
-        <p>기획과 개발이 나뉘어 있고, 기간은 약 5개월입니다. 그 안에 서로 다른 34종을 만들고, 정해진 성능을 맞추고, 플랫폼 탑재까지 끝내야 합니다.</p>
-        <p>이걸 따로따로 진행하면 맞추기 어렵습니다. 그래서 처음부터 플랫폼 연계를 중심에 두겠습니다.</p>
+        <p>기획과 개발이 나뉘어 있고, <span class="speech-cue">/</span> 기간은 약 5개월입니다. <span class="speech-cue">//</span> 그 안에 서로 다른 34종을 만들고, 정해진 성능을 맞추고, 플랫폼 탑재까지 끝내야 합니다.</p>
+        <p>이걸 따로따로 진행하면 맞추기 어렵습니다. <span class="speech-cue">//</span> 그래서 처음부터 <strong class="speech-emphasis">**플랫폼 연계**</strong>를 중심에 두겠습니다.</p>
       </div>
     </section>
 
@@ -281,8 +303,8 @@
     <section class="script-area slide" id="slide-07" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">사업 범위와 요구사항</h1>
       <div class="script-text">
-        <p>저희가 맡을 범위는 스토리보드 작성부터 플랫폼 탑재까지, 네 가지 과업입니다.</p>
-        <p>요구사항 43건을 빠짐없이 반영해서, 34종 모두 지능형과학실ON 안에서 동작하도록 만들겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 저희가 맡을 범위는 스토리보드 작성부터 플랫폼 탑재까지, 네 가지 과업입니다.</p>
+        <p><strong class="speech-emphasis">**요구사항 43건**</strong>을 빠짐없이 반영해서, <span class="speech-cue">/</span> 34종 모두 지능형과학실ON 안에서 동작하도록 만들겠습니다.</p>
       </div>
     </section>
 
@@ -290,9 +312,9 @@
     <section class="script-area slide" id="slide-08" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">운영 통계와 핵심 요소</h1>
       <div class="script-text">
-        <p>실제로 얼마나 쓰이는지도 봤습니다. 최근 4개월 동안 콘텐츠 이용 10건 중 9건이 시뮬레이션이었습니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 실제로 얼마나 쓰이는지도 봤습니다. <span class="speech-cue">//</span> 최근 4개월 동안 콘텐츠 이용 <strong class="speech-emphasis">**10건 중 9건**</strong>이 시뮬레이션이었습니다.</p>
         <p>개학한 9월에는 방학인 8월보다 이용이 3배로 늘었습니다.</p>
-        <p>그만큼 수업에서 많이 쓴다는 뜻입니다. 그래서 콘텐츠 자체의 품질과 플랫폼 연계, 이 두 가지를 핵심으로 잡았습니다.</p>
+        <p>그만큼 수업에서 많이 쓴다는 뜻입니다. <span class="speech-cue">//</span> 그래서 콘텐츠 자체의 품질과 플랫폼 연계, <span class="speech-cue">/</span> 이 두 가지를 핵심으로 잡았습니다.</p>
       </div>
     </section>
 
@@ -301,8 +323,8 @@
       <h1 class="script-title">핵심 요소 1 · 콘텐츠 품질</h1>
       <div class="script-text">
         <p>먼저 콘텐츠 품질입니다.</p>
-        <p>제안요청서가 짚은 기존 63종의 한계를 보면, 기술 문제도 있고 일을 수행하는 구조의 문제도 있습니다.</p>
-        <p>계산 문제는 저희 수치해석 엔진으로 풀겠습니다. 수행 방식은 하도급 없이 직접 맡고, 만드는 과정도 CDMS로 공개하겠습니다.</p>
+        <p>제안요청서가 짚은 기존 63종의 한계를 보면, <span class="speech-cue">/</span> 기술 문제도 있고 일을 수행하는 구조의 문제도 있습니다.</p>
+        <p>계산 문제는 저희 수치해석 엔진으로 풀겠습니다. <span class="speech-cue">//</span> 수행 방식은 <strong class="speech-emphasis">**하도급 없이 직접**</strong> 맡고, <span class="speech-cue">/</span> 만드는 과정도 CDMS로 공개하겠습니다.</p>
       </div>
     </section>
 
@@ -310,8 +332,8 @@
     <section class="script-area slide" id="slide-10" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">핵심 요소 2 · 플랫폼 연계</h1>
       <div class="script-text">
-        <p>다음은 플랫폼 연계입니다. 지능형과학실ON은 지금 저희가 전면 개편하고 있습니다.</p>
-        <p>저희는 개편이 끝날 때까지 기다릴 필요가 없습니다. 처음부터 같은 기준으로 콘텐츠를 만들 수 있습니다.</p>
+        <p>다음은 플랫폼 연계입니다. <span class="speech-cue">//</span> 지능형과학실ON은 지금 저희가 전면 개편하고 있습니다.</p>
+        <p>저희는 개편이 끝날 때까지 기다릴 필요가 없습니다. <span class="speech-cue">//</span> <strong class="speech-emphasis">**처음부터 같은 기준**</strong>으로 콘텐츠를 만들 수 있습니다.</p>
         <p>그래서 탑재한 뒤 다시 고치는 일을 최소화하겠습니다.</p>
       </div>
     </section>
@@ -320,7 +342,7 @@
     <section class="script-area slide" id="slide-11" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">접속과 학교망 지원</h1>
       <div class="script-text">
-        <p>학생은 로그인하지 않아도 주소나 QR코드로 바로 실행할 수 있습니다. 로그인하면 탐구 기록이 지능형과학실ON에 남습니다.</p>
+        <p>학생은 로그인하지 않아도 주소나 QR코드로 <strong class="speech-emphasis">**바로 실행**</strong>할 수 있습니다. <span class="speech-cue">//</span> 로그인하면 탐구 기록이 지능형과학실ON에 남습니다.</p>
         <p>학교망 때문에 접속이 어려운 곳은 교내 서버나 오프라인 패키지로 지원하겠습니다.</p>
         <p>어디까지 공개할지는 착수할 때 재단과 확정하겠습니다.</p>
       </div>
@@ -330,8 +352,8 @@
     <section class="script-area slide" id="slide-12" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">핵심 요구 다섯 가지 대응</h1>
       <div class="script-text">
-        <p>핵심 요구 다섯 가지도, 왜 이런 요구가 나왔는지부터 살펴봤습니다.</p>
-        <p>그 배경에 맞춰 추진 전략과 공통 기반을 준비했습니다. 실제 수행은 저희 조직이 직접 맡아서 하나씩 대응하겠습니다.</p>
+        <p>핵심 요구 다섯 가지도, <strong class="speech-emphasis">**왜 이런 요구가 나왔는지**</strong>부터 살펴봤습니다.</p>
+        <p>그 배경에 맞춰 추진 전략과 공통 기반을 준비했습니다. <span class="speech-cue">//</span> 실제 수행은 저희 조직이 직접 맡아서 하나씩 대응하겠습니다.</p>
       </div>
     </section>
 
@@ -339,11 +361,11 @@
     <section class="script-area slide" id="slide-13" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">셈웨어를 선택할 네 가지 이유</h1>
       <div class="script-text">
-        <p>그럼 왜 셈웨어여야 하는지, 네 가지만 말씀드리겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 그럼 왜 셈웨어여야 하는지, 네 가지만 말씀드리겠습니다.</p>
         <p>첫째, 지능형과학실ON을 운영하고 있어서 직접 연결할 수 있습니다.</p>
         <p>둘째, 40년간 쌓은 수치해석 기술이 있습니다.</p>
         <p>셋째, 프로토타입 8개를 이미 만들어 개발 흐름을 확인했습니다.</p>
-        <p>넷째, 저희 인력이 직접 만들고, 그 과정도 CDMS로 보여 드립니다.</p>
+        <p>넷째, <strong class="speech-emphasis">**저희 인력이 직접**</strong> 만들고, 그 과정도 CDMS로 보여 드립니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -352,7 +374,7 @@
       <h1 class="script-title">네 가지 추진 전략</h1>
       <div class="script-text">
         <p>이제 그걸 어떻게 실행할지 말씀드리겠습니다.</p>
-        <p>전략은 탐구성, 연계성, 실행성, 정확성, 네 가지입니다.</p>
+        <p>전략은 탐구성, 연계성, 실행성, 정확성, <strong class="speech-emphasis">**네 가지**</strong>입니다.</p>
         <p>각각을 저희 기술과 운영 경험으로 어떻게 뒷받침할지, 하나씩 보겠습니다.</p>
       </div>
     </section>
@@ -361,9 +383,9 @@
     <section class="script-area slide" id="slide-15" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">전략 1 · 프로토타입 선행 개발</h1>
       <div class="script-text">
-        <p>첫 번째는 먼저 만들어 보고 확인하는 겁니다.</p>
-        <p>34종 모두 학생이 변인을 3개 이상 직접 바꿔 보고, 결과를 비교할 수 있게 하겠습니다.</p>
-        <p>「별빛 연금술」을 보시면, 질량에 따라 백색왜성, 중성자별, 블랙홀로 결과가 달라집니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 첫 번째는 먼저 만들어 보고 확인하는 겁니다.</p>
+        <p>34종 모두 학생이 변인을 3개 이상 <strong class="speech-emphasis">**직접 바꿔 보고**</strong>, <span class="speech-cue">/</span> 결과를 비교할 수 있게 하겠습니다.</p>
+        <p>「별빛 연금술」을 보시면, <span class="speech-cue">/</span> 질량에 따라 백색왜성, 중성자별, 블랙홀로 결과가 달라집니다.</p>
         <p>이런 프로토타입을 시나리오를 받은 뒤 20일 안에 먼저 만들겠습니다.</p>
       </div>
     </section>
@@ -373,8 +395,8 @@
       <h1 class="script-title">전략 2 · 플랫폼 연계 및 탑재</h1>
       <div class="script-text">
         <p>두 번째는 학생의 활동이 플랫폼까지 이어지게 하는 겁니다.</p>
-        <p>그러려면 처음부터 기록 규격을 맞춰야 합니다. 착수 단계에서 이 부분부터 확정하겠습니다.</p>
-        <p>학생이 무엇을 조작했고 어떤 값을 측정했는지, 그 기록이 보고서와 평가, 교사 화면까지 이어지게 하겠습니다.</p>
+        <p>그러려면 처음부터 <strong class="speech-emphasis">**기록 규격**</strong>을 맞춰야 합니다. <span class="speech-cue">//</span> 착수 단계에서 이 부분부터 확정하겠습니다.</p>
+        <p>학생이 무엇을 조작했고 어떤 값을 측정했는지, <span class="speech-cue">/</span> 그 기록이 보고서와 평가, 교사 화면까지 이어지게 하겠습니다.</p>
       </div>
     </section>
 
@@ -382,8 +404,8 @@
     <section class="script-area slide" id="slide-17" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">전략 3 · 공통 표준 우선 수립</h1>
       <div class="script-text">
-        <p>세 번째는 어떤 기기에서도 안정적으로 돌아가게 하는 겁니다.</p>
-        <p>착수 후 4주 안에 34종의 공통 표준을 잡겠습니다. 저사양 기기에서 2D로 바뀌더라도 계산 결과는 같아야 합니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 세 번째는 어떤 기기에서도 안정적으로 돌아가게 하는 겁니다.</p>
+        <p>착수 후 4주 안에 34종의 공통 표준을 잡겠습니다. <span class="speech-cue">//</span> 저사양 기기에서 2D로 바뀌더라도 <strong class="speech-emphasis">**계산 결과는 같아야**</strong> 합니다.</p>
         <p>학급 30명이 동시에 쓰는 상황도 실제 기기로 측정해서 확인하겠습니다.</p>
       </div>
     </section>
@@ -392,8 +414,8 @@
     <section class="script-area slide" id="slide-18" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">전략 4 · 원천 연산 엔진 적용</h1>
       <div class="script-text">
-        <p>네 번째는 계산의 정확성입니다.</p>
-        <p>저희가 40년간 다듬어 온 엔진을 적용해서, 같은 값을 넣으면 같은 결과가 나오게 하겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 네 번째는 <strong class="speech-emphasis">**계산의 정확성**</strong>입니다.</p>
+        <p>저희가 40년간 다듬어 온 엔진을 적용해서, <span class="speech-cue">/</span> 같은 값을 넣으면 같은 결과가 나오게 하겠습니다.</p>
         <p>그리고 네 가지 수치 검증 기준으로 모든 조합을 시험하겠습니다.</p>
       </div>
     </section>
@@ -402,9 +424,9 @@
     <section class="script-area slide" id="slide-19" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">사전 프로토타입 검증</h1>
       <div class="script-text">
-        <p>말씀드린 네 가지 전략은 프로토타입 8개로 미리 확인했습니다.</p>
+        <p>말씀드린 네 가지 전략은 프로토타입 8개로 <strong class="speech-emphasis">**미리 확인**</strong>했습니다.</p>
         <p>실행 버튼을 누르시면 실제로 어떻게 돌아가는지 보실 수 있습니다.</p>
-        <p>여기서 검증한 화면과 계산 방식을 1차 17종부터 적용하겠습니다.</p>
+        <p>여기서 검증한 화면과 계산 방식을 1차 17종부터 적용하겠습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -414,7 +436,7 @@
       <div class="script-text">
         <p>일정에서 하나 짚고 갈 부분이 있습니다.</p>
         <p>기획과 플랫폼 사업은 2월에 끝나는데, 저희 사업은 3월까지입니다.</p>
-        <p>저희는 한 팀이 콘텐츠와 플랫폼을 함께 맡습니다. 그래서 2월에 1차 사전 탑재를 끝내고, 3월까지 나머지 탑재와 안정화를 책임지겠습니다.</p>
+        <p>저희는 <strong class="speech-emphasis">**한 팀**</strong>이 콘텐츠와 플랫폼을 함께 맡습니다. <span class="speech-cue">//</span> 그래서 2월에 1차 사전 탑재를 끝내고, <span class="speech-cue">/</span> 3월까지 나머지 탑재와 안정화를 책임지겠습니다.</p>
       </div>
     </section>
 
@@ -422,9 +444,9 @@
     <section class="script-area slide" id="slide-21" data-topic="1장 · 전략 및 방법론" hidden>
       <h1 class="script-title">적용 기술과 응답 성능</h1>
       <div class="script-text">
-        <p>기술 구조도 간단히 말씀드리겠습니다.</p>
-        <p>웹 표준을 바탕으로 화면, 3D, 연산을 나눕니다. 계산에는 특허 2건의 원천 기술을 담은 수치해석 엔진을 씁니다.</p>
-        <p>학생이 조작하면 0.2초 안에 반응하고, 화면은 초당 30프레임으로 움직이는 게 목표입니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 기술 구조도 간단히 말씀드리겠습니다.</p>
+        <p>웹 표준을 바탕으로 화면, <span class="speech-cue">/</span> 3D, 연산을 나눕니다. <span class="speech-cue">//</span> 계산에는 특허 2건의 원천 기술을 담은 수치해석 엔진을 씁니다.</p>
+        <p>학생이 조작하면 <strong class="speech-emphasis">**0.2초**</strong> 안에 반응하고, <span class="speech-cue">/</span> 화면은 초당 30프레임으로 움직이는 게 목표입니다.</p>
       </div>
     </section>
 
@@ -433,7 +455,7 @@
       <h1 class="script-title">프로토타입 병행 개발 방법론</h1>
       <div class="script-text">
         <p>개발할 때는 문서만 주고받지 않겠습니다.</p>
-        <p>시뮬레이션은 직접 눌러 봐야 서로 같은 생각을 하고 있는지 알 수 있습니다. 그래서 공교육 콘텐츠 사업에서 검증한 방식대로, 프로토타입을 함께 만들면서 확인하겠습니다.</p>
+        <p>시뮬레이션은 <strong class="speech-emphasis">**직접 눌러 봐야**</strong> 서로 같은 생각을 하고 있는지 알 수 있습니다. <span class="speech-cue">//</span> 그래서 공교육 콘텐츠 사업에서 검증한 방식대로, <span class="speech-cue">/</span> 프로토타입을 함께 만들면서 확인하겠습니다.</p>
         <p>추가 요구사항은 변경관리대장에 남기고, 재단과 협의해서 관리하겠습니다.</p>
       </div>
     </section>
@@ -443,8 +465,8 @@
       <h1 class="script-title">개발 절차와 ABCD론</h1>
       <div class="script-text">
         <p>기본은 표준 5단계 개발 절차와 4단계 검수입니다.</p>
-        <p>여기에 ABCD론을 적용합니다. 기획 의도를 AI 샘플 화면으로 만들어서 바로 주고받는 방식입니다.</p>
-        <p>이렇게 해서 1주에서 2주씩 걸리던 의견 조율 시간을 줄이겠습니다. 재단의 School AI 사업에서도 같은 절차를 썼습니다.</p>
+        <p>여기에 ABCD론을 적용합니다. <span class="speech-cue">//</span> 기획 의도를 AI 샘플 화면으로 만들어서 바로 주고받는 방식입니다.</p>
+        <p>이렇게 해서 1주에서 2주씩 걸리던 <strong class="speech-emphasis">**의견 조율 시간**</strong>을 줄이겠습니다. <span class="speech-cue">//</span> 재단의 School AI 사업에서도 같은 절차를 썼습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -454,7 +476,7 @@
       <div class="script-text">
         <p>이제 2장, 실제 기술과 기능을 보겠습니다.</p>
         <p>주요 기능은 프로토타입 8개와 운영 중인 플랫폼으로 미리 준비해 뒀습니다.</p>
-        <p>QR코드로 직접 확인하실 수 있습니다.</p>
+        <p>QR코드로 <strong class="speech-emphasis">**직접 확인**</strong>하실 수 있습니다.</p>
       </div>
     </section>
 
@@ -462,7 +484,7 @@
     <section class="script-area slide" id="slide-25" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">기획 요구사항과 3자 협업</h1>
       <div class="script-text">
-        <p>기획 요구사항 6건은 재단, 기획기관, 저희 셈웨어가 함께 맞춰 가겠습니다.</p>
+        <p>기획 요구사항 6건은 재단, 기획기관, 저희 셈웨어가 <strong class="speech-emphasis">**함께 맞춰**</strong> 가겠습니다.</p>
         <p>「캠핑장 불을 밝혀라」는 기획 전 과정을 미리 진행해 본 사례입니다.</p>
         <p>여기서 확인한 기획 체계를 착수 첫날부터 적용하겠습니다.</p>
       </div>
@@ -473,7 +495,7 @@
       <h1 class="script-title">전공 교수의 과학 내용 검토</h1>
       <div class="script-text">
         <p>과학 내용이 맞는지도 계속 확인해야 합니다.</p>
-        <p>물리, 화학, 생명과학, 지구과학 전공 교수 네 분이 시나리오를 받을 때부터 최종 검수까지 단계마다 검토합니다.</p>
+        <p>물리, <span class="speech-cue">/</span> 화학, 생명과학, 지구과학 전공 교수 네 분이 시나리오를 받을 때부터 최종 검수까지 <strong class="speech-emphasis">**단계마다 검토**</strong>합니다.</p>
         <p>학생에게 잘못된 개념을 전달하지 않도록 하겠습니다.</p>
       </div>
     </section>
@@ -483,7 +505,7 @@
       <h1 class="script-title">연산·상호작용 규격</h1>
       <div class="script-text">
         <p>시나리오를 받으면, 무엇을 조작하고 어떻게 계산할지부터 정하겠습니다.</p>
-        <p>결과 계산에는 무작위 값을 쓰지 않습니다. 같은 조건으로 실험하면 같은 결과를 얻을 수 있게 하겠습니다.</p>
+        <p>결과 계산에는 무작위 값을 쓰지 않습니다. <span class="speech-cue">//</span> <strong class="speech-emphasis">**같은 조건**</strong>으로 실험하면 같은 결과를 얻을 수 있게 하겠습니다.</p>
       </div>
     </section>
 
@@ -491,8 +513,8 @@
     <section class="script-area slide" id="slide-28" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">34종 공통 개발 표준</h1>
       <div class="script-text">
-        <p>34종을 제각각 만들지는 않겠습니다. 착수 후 4주 안에 공통 개발 표준을 정합니다.</p>
-        <p>화면 배치와 공통 컴포넌트, 학교급별 조작 규칙을 맞추고, 재단 승인을 받아 34종에 똑같이 적용하겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 34종을 제각각 만들지는 않겠습니다. <span class="speech-cue">//</span> 착수 후 4주 안에 <strong class="speech-emphasis">**공통 개발 표준**</strong>을 정합니다.</p>
+        <p>화면 배치와 공통 컴포넌트, <span class="speech-cue">/</span> 학교급별 조작 규칙을 맞추고, 재단 승인을 받아 34종에 똑같이 적용하겠습니다.</p>
       </div>
     </section>
 
@@ -501,8 +523,8 @@
       <h1 class="script-title">장면 단위 스토리보드 설계</h1>
       <div class="script-text">
         <p>스토리보드는 장면별로 그리겠습니다.</p>
-        <p>어떤 조건에서 어떤 결과가 나오는지, 표에 있는 모든 조합을 화면으로 먼저 확인합니다.</p>
-        <p>학생이 틀렸을 때도 그냥 넘어가지 않고, 원인을 짚고 다시 물어보는 화면까지 설계하겠습니다.</p>
+        <p>어떤 조건에서 어떤 결과가 나오는지, <span class="speech-cue">/</span> 표에 있는 모든 조합을 화면으로 먼저 확인합니다.</p>
+        <p>학생이 틀렸을 때도 그냥 넘어가지 않고, <span class="speech-cue">/</span> <strong class="speech-emphasis">**원인을 짚고**</strong> 다시 물어보는 화면까지 설계하겠습니다.</p>
       </div>
     </section>
 
@@ -512,7 +534,7 @@
       <div class="script-text">
         <p>실제 개발은 이렇게 진행합니다.</p>
         <p>승인된 스토리보드를 데이터로 바꾸고, 공통 구조를 바탕으로 34종을 만듭니다.</p>
-        <p>모든 조합은 자동으로 검사합니다. 수정이 생기면 데이터표를 바꿔 바로 반영하겠습니다.</p>
+        <p>모든 조합은 <strong class="speech-emphasis">**자동으로 검사**</strong>합니다. <span class="speech-cue">//</span> 수정이 생기면 데이터표를 바꿔 바로 반영하겠습니다.</p>
       </div>
     </section>
 
@@ -521,7 +543,7 @@
       <h1 class="script-title">기기 사양에 따른 3D 품질 조정</h1>
       <div class="script-text">
         <p>3D 품질은 기기 사양에 맞춰 자동으로 조정합니다.</p>
-        <p>저사양 크롬북에서도 끊기지 않고 쓸 수 있게 하겠습니다.</p>
+        <p>저사양 크롬북에서도 <strong class="speech-emphasis">**끊기지 않고**</strong> 쓸 수 있게 하겠습니다.</p>
       </div>
     </section>
 
@@ -529,7 +551,7 @@
     <section class="script-area slide" id="slide-32" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">탐구 보고서와 마무리 영상</h1>
       <div class="script-text">
-        <p>학생이 조작한 기록은 탐구 보고서에 자동으로 들어갑니다.</p>
+        <p>학생이 조작한 기록은 탐구 보고서에 <strong class="speech-emphasis">**자동으로**</strong> 들어갑니다.</p>
         <p>그 기록으로 나만의 마무리 영상도 만들 수 있습니다.</p>
       </div>
     </section>
@@ -540,7 +562,7 @@
       <div class="script-text">
         <p>로그인한 학생의 학습 기록은 xAPI 표준으로 지능형과학실ON에 저장합니다.</p>
         <p>메타데이터도 콘텐츠에 담아서, 탑재할 때 자동으로 등록되게 하겠습니다.</p>
-        <p>교사는 학급이 어디까지 진행했는지, 학생들이 어떤 개념을 잘못 이해했는지 바로 볼 수 있습니다.</p>
+        <p>교사는 학급이 어디까지 진행했는지, <span class="speech-cue">/</span> 학생들이 어떤 개념을 잘못 이해했는지 <strong class="speech-emphasis">**바로 볼 수 있습니다**</strong>.</p>
       </div>
     </section>
 
@@ -548,8 +570,8 @@
     <section class="script-area slide" id="slide-34" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">탐구를 돕는 공통 AI 4종</h1>
       <div class="script-text">
-        <p>AI가 바로 정답을 말해 주지는 않습니다. 먼저 예측해 보고, 비교해 보고, 다시 생각하도록 질문하겠습니다.</p>
-        <p>변인 통제 판정, 단계형 힌트, 원인 대조, 서술문 분석, 이 공통 AI 4종을 34종 전체에 적용합니다.</p>
+        <p><span class="speech-cue">[천천히]</span> AI가 바로 <strong class="speech-emphasis">**정답을 말해 주지는**</strong> 않습니다. <span class="speech-cue">//</span> 먼저 예측해 보고, <span class="speech-cue">/</span> 비교해 보고, 다시 생각하도록 질문하겠습니다.</p>
+        <p>변인 통제 판정, <span class="speech-cue">/</span> 단계형 힌트, 원인 대조, 서술문 분석, 이 공통 AI 4종을 34종 전체에 적용합니다.</p>
         <p>학생이 판정에 동의하지 않으면 교사에게 확인을 요청할 수도 있습니다.</p>
       </div>
     </section>
@@ -559,8 +581,8 @@
       <h1 class="script-title">AI 플랫폼 연동과 운영</h1>
       <div class="script-text">
         <p>이 AI를 한 학급이 함께 쓰려면 플랫폼과도 연결돼야 합니다.</p>
-        <p>계정과 학습 기록 등 다섯 곳의 연동은 저희가 콘텐츠와 플랫폼 양쪽에서 맡겠습니다.</p>
-        <p>비용은 누가 부담할지, 어디까지 쓸 수 있게 할지는 착수할 때 재단과 확정하겠습니다.</p>
+        <p>계정과 학습 기록 등 다섯 곳의 연동은 저희가 콘텐츠와 플랫폼 <strong class="speech-emphasis">**양쪽에서**</strong> 맡겠습니다.</p>
+        <p>비용은 누가 부담할지, <span class="speech-cue">/</span> 어디까지 쓸 수 있게 할지는 착수할 때 재단과 확정하겠습니다.</p>
       </div>
     </section>
 
@@ -568,8 +590,8 @@
     <section class="script-area slide" id="slide-36" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">AI 판정과 수업 중단 방지</h1>
       <div class="script-text">
-        <p>생성형 AI에 모든 판단을 맡기지는 않습니다. AI는 학생의 문장을 이해하는 데 쓰고, 판정은 정해진 규칙과 계산으로 합니다.</p>
-        <p>개인정보는 가려서 보냅니다. 응답이 3초를 넘기면 규칙에 따른 응답으로 바꿉니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 생성형 AI에 모든 판단을 맡기지는 않습니다. <span class="speech-cue">//</span> AI는 학생의 문장을 이해하는 데 쓰고, <span class="speech-cue">/</span> 판정은 정해진 <strong class="speech-emphasis">**규칙과 계산**</strong>으로 합니다.</p>
+        <p>개인정보는 가려서 보냅니다. <span class="speech-cue">//</span> 응답이 3초를 넘기면 규칙에 따른 응답으로 바꿉니다.</p>
         <p>학생이 AI를 기다리느라 수업을 멈추는 일은 없도록 하겠습니다.</p>
       </div>
     </section>
@@ -579,8 +601,8 @@
       <h1 class="script-title">공통 탐구 흐름과 평가 근거</h1>
       <div class="script-text">
         <p>34종의 진행 흐름은 모두 같은 8단계로 맞춥니다.</p>
-        <p>매번 사용법을 새로 배우기보다 탐구에 집중할 수 있게 하려는 겁니다.</p>
-        <p>탐구 기록은 루브릭의 3개 영역과 연결해서, 교사가 평가할 때 근거로 쓸 수 있게 하겠습니다.</p>
+        <p>매번 사용법을 새로 배우기보다 <strong class="speech-emphasis">**탐구에 집중**</strong>할 수 있게 하려는 겁니다.</p>
+        <p>탐구 기록은 루브릭의 3개 영역과 연결해서, <span class="speech-cue">/</span> 교사가 평가할 때 근거로 쓸 수 있게 하겠습니다.</p>
       </div>
     </section>
 
@@ -588,8 +610,8 @@
     <section class="script-area slide" id="slide-38" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">활동지형·게임형 콘텐츠 사례</h1>
       <div class="script-text">
-        <p>고리 롤러코스터에서는 3D 실험 결과가 활동지에 바로 들어갑니다.</p>
-        <p>「HEMO 라스트슛」은 게임형입니다. 숨과 심장을 바르게 조절해야 미션을 통과할 수 있습니다.</p>
+        <p>고리 롤러코스터에서는 3D 실험 결과가 활동지에 <strong class="speech-emphasis">**바로 들어갑니다**</strong>.</p>
+        <p>「HEMO 라스트슛」은 게임형입니다. <span class="speech-cue">//</span> 숨과 심장을 바르게 조절해야 미션을 통과할 수 있습니다.</p>
       </div>
     </section>
 
@@ -597,9 +619,9 @@
     <section class="script-area slide" id="slide-39" data-topic="2장 · 기술 및 기능" hidden>
       <h1 class="script-title">보안·데이터·제약사항</h1>
       <div class="script-text">
-        <p>보안과 데이터, 제약사항도 처음 설계할 때부터 챙기겠습니다.</p>
-        <p>개인정보는 수집하지 않는 게 원칙입니다. 학습 기록 저장소는 xAPI 공식 시험의 모든 항목을 통과한 저희 기술을 씁니다.</p>
-        <p>6개 분야의 제약사항도 탑재 전에 모두 시험하겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 보안과 데이터, 제약사항도 처음 설계할 때부터 챙기겠습니다.</p>
+        <p>개인정보는 <strong class="speech-emphasis">**수집하지 않는 게 원칙**</strong>입니다. <span class="speech-cue">//</span> 학습 기록 저장소는 xAPI 공식 시험의 모든 항목을 통과한 저희 기술을 씁니다.</p>
+        <p>6개 분야의 제약사항도 탑재 전에 모두 시험하겠습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -607,9 +629,9 @@
     <section class="script-area slide" id="slide-40" data-topic="3장 · 성능 및 품질" hidden>
       <h1 class="script-title">성능 및 품질 목표</h1>
       <div class="script-text">
-        <p>다음은 3장, 성능과 품질입니다.</p>
-        <p>기준은 숫자로 말씀드리겠습니다. 처음 로딩은 10초 이내, 화면은 초당 30프레임, 동시 사용은 학급 30명입니다.</p>
-        <p>실제 학교 기기로 측정해서 확인하고, 결함은 100% 조치하겠습니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 다음은 3장, 성능과 품질입니다.</p>
+        <p>기준은 숫자로 말씀드리겠습니다. <span class="speech-cue">//</span> 처음 로딩은 10초 이내, <span class="speech-cue">/</span> 화면은 초당 30프레임, 동시 사용은 학급 30명입니다.</p>
+        <p>실제 학교 기기로 측정해서 확인하고, 결함은 <strong class="speech-emphasis">**100%**</strong> 조치하겠습니다.</p>
       </div>
     </section>
 
@@ -617,8 +639,8 @@
     <section class="script-area slide" id="slide-41" data-topic="3장 · 성능 및 품질" hidden>
       <h1 class="script-title">4중 품질 검증과 장애 복구</h1>
       <div class="script-text">
-        <p>품질은 네 번에 걸쳐 확인하겠습니다. 자체 검수, 전공 자문, 재단 시험, 그리고 한국교육학술정보원 심사입니다.</p>
-        <p>34종 모두 심사에 합격할 때까지 책임지겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 품질은 네 번에 걸쳐 확인하겠습니다. <span class="speech-cue">//</span> 자체 검수, <span class="speech-cue">/</span> 전공 자문, 재단 시험, 그리고 한국교육학술정보원 심사입니다.</p>
+        <p>34종 모두 심사에 <strong class="speech-emphasis">**합격할 때까지**</strong> 책임지겠습니다.</p>
         <p>긴급 장애가 나면 4시간 안에 복구하겠습니다.</p>
       </div>
     </section>
@@ -627,8 +649,8 @@
     <section class="script-area slide" id="slide-42" data-topic="3장 · 성능 및 품질" hidden>
       <h1 class="script-title">인터페이스와 현장 파일럿</h1>
       <div class="script-text">
-        <p>연계 지점은 6곳입니다. 각각 두 가지 방안을 비교해서 가장 적합한 방식으로 연결하겠습니다.</p>
-        <p>화면은 기기에 맞게 자동으로 배치합니다. 현장 파일럿도 2회 진행해서 실제로 쓰기 편한지 확인하겠습니다.</p>
+        <p>연계 지점은 6곳입니다. <span class="speech-cue">//</span> 각각 두 가지 방안을 비교해서 가장 적합한 방식으로 연결하겠습니다.</p>
+        <p>화면은 기기에 맞게 자동으로 배치합니다. <span class="speech-cue">//</span> 현장 파일럿도 2회 진행해서 <strong class="speech-emphasis">**실제로 쓰기 편한지**</strong> 확인하겠습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -637,7 +659,7 @@
       <h1 class="script-title">프로젝트 관리와 CDMS</h1>
       <div class="script-text">
         <p>4장, 프로젝트 관리입니다.</p>
-        <p>사업 관리는 지금 운영 중인 CDMS에서 합니다. 이번 사업을 위한 공간도 이미 열어뒀습니다.</p>
+        <p>사업 관리는 지금 운영 중인 CDMS에서 합니다. <span class="speech-cue">//</span> 이번 사업을 위한 공간도 <strong class="speech-emphasis">**이미 열어뒀습니다**</strong>.</p>
         <p>착수하면 바로 재단과 검토위원께 계정을 드리겠습니다.</p>
       </div>
     </section>
@@ -648,7 +670,7 @@
       <div class="script-text">
         <p>사업은 PM인 제가 직접 총괄합니다.</p>
         <p>분야별 PL을 두고, 품질보증 담당은 별도로 두겠습니다.</p>
-        <p>하도급 없이 저희 인력으로 전부 수행합니다. 인력을 바꿔야 할 때는 재단과 먼저 협의하겠습니다.</p>
+        <p><strong class="speech-emphasis">**하도급 없이**</strong> 저희 인력으로 전부 수행합니다. <span class="speech-cue">//</span> 인력을 바꿔야 할 때는 재단과 먼저 협의하겠습니다.</p>
       </div>
     </section>
 
@@ -656,8 +678,8 @@
     <section class="script-area slide" id="slide-45" data-topic="4장 · 프로젝트 관리" hidden>
       <h1 class="script-title">사업 관리 방법론과 보고</h1>
       <div class="script-text">
-        <p>관리는 8개 영역으로 나눠서 합니다. 주요 위험에 대해서는 대응책도 미리 마련해 뒀습니다.</p>
-        <p>어디까지 진행됐는지는 정기 보고와 CDMS로 언제든 확인하실 수 있습니다.</p>
+        <p>관리는 8개 영역으로 나눠서 합니다. <span class="speech-cue">//</span> 주요 위험에 대해서는 대응책도 미리 마련해 뒀습니다.</p>
+        <p>어디까지 진행됐는지는 정기 보고와 CDMS로 <strong class="speech-emphasis">**언제든 확인**</strong>하실 수 있습니다.</p>
       </div>
     </section>
 
@@ -665,9 +687,9 @@
     <section class="script-area slide" id="slide-46" data-topic="4장 · 프로젝트 관리" hidden>
       <h1 class="script-title">5개월 추진 일정</h1>
       <div class="script-text">
-        <p>전체 기간은 약 5개월입니다.</p>
-        <p>착수 보고 전에 프로토타입부터 보여 드리겠습니다. 기관마다 생각하는 결과물이 다르지 않도록, 먼저 맞추고 시작하자는 겁니다.</p>
-        <p>2월에는 1차 17종을 미리 탑재해 시험하고, 3월에는 34종 전체의 탑재를 마치겠습니다.</p>
+        <p><span class="speech-cue">[또렷하게]</span> 전체 기간은 약 5개월입니다.</p>
+        <p>착수 보고 전에 프로토타입부터 보여 드리겠습니다. <span class="speech-cue">//</span> 기관마다 생각하는 결과물이 다르지 않도록, <span class="speech-cue">/</span> <strong class="speech-emphasis">**먼저 맞추고 시작**</strong>하자는 겁니다.</p>
+        <p>2월에는 1차 17종을 미리 탑재해 시험하고, <span class="speech-cue">/</span> 3월에는 34종 전체의 탑재를 마치겠습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -675,8 +697,8 @@
     <section class="script-area slide" id="slide-47" data-topic="5장 · 프로젝트 지원" hidden>
       <h1 class="script-title">프로젝트 지원과 하자 보수</h1>
       <div class="script-text">
-        <p>마지막으로 5장, 프로젝트 지원입니다.</p>
-        <p>무상 하자 보수는 12개월입니다. 장애가 나면 30분 안에 보고하고, 4시간 안에 복구하겠습니다.</p>
+        <p><span class="speech-cue">[천천히]</span> 마지막으로 5장, 프로젝트 지원입니다.</p>
+        <p>무상 하자 보수는 12개월입니다. <span class="speech-cue">//</span> 장애가 나면 <strong class="speech-emphasis">**30분 안에 보고**</strong>하고, <span class="speech-cue">/</span> 4시간 안에 복구하겠습니다.</p>
       </div>
     </section>
 
@@ -684,8 +706,8 @@
     <section class="script-area slide" id="slide-48" data-topic="5장 · 프로젝트 지원" hidden>
       <h1 class="script-title">사전 체험과 사용법 영상</h1>
       <div class="script-text">
-        <p>탑재 전에는 사전 체험단이 실제 수업에서 두 차례 시험해 보도록 하겠습니다.</p>
-        <p>사용법 영상도 34종을 제공하겠습니다. 신학기 수업에서 바로 쓸 수 있도록 지원하겠습니다.</p>
+        <p>탑재 전에는 사전 체험단이 <strong class="speech-emphasis">**실제 수업**</strong>에서 두 차례 시험해 보도록 하겠습니다.</p>
+        <p>사용법 영상도 34종을 제공하겠습니다. <span class="speech-cue">//</span> 신학기 수업에서 바로 쓸 수 있도록 지원하겠습니다.</p>
       </div>
     </section>
 
@@ -694,8 +716,8 @@
       <h1 class="script-title">추가 제안 두 가지</h1>
       <div class="script-text">
         <p>추가로 두 가지를 제안드립니다.</p>
-        <p>먼저 저희가 보유한 시뮬레이션 3,000종 이상을 재단과 협의해서 무상으로 연계하겠습니다.</p>
-        <p>그리고 이번 34종의 탐구 기록을 지능형과학실ON의 AI 추천에 연결하겠습니다.</p>
+        <p>먼저 저희가 보유한 시뮬레이션 3,000종 이상을 재단과 협의해서 <strong class="speech-emphasis">**무상으로 연계**</strong>하겠습니다.</p>
+        <p>그리고 이번 34종의 탐구 기록을 지능형과학실ON의 AI 추천에 연결하겠습니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
@@ -703,10 +725,10 @@
     <section class="script-area slide" id="slide-50" data-topic="마무리" hidden>
       <h1 class="script-title">핵심 약속과 끝인사</h1>
       <div class="script-text">
-        <p>처음 말씀드린 핵심으로 돌아가겠습니다.</p>
-        <p>학생이 값을 바꾸면, 그에 맞는 결과가 나와야 합니다. 셈웨어는 그 값을 정확하게 계산하는 시뮬레이션을 만들겠습니다.</p>
+        <p><span class="speech-cue">[미소]</span> 처음 말씀드린 핵심으로 돌아가겠습니다.</p>
+        <p>학생이 값을 바꾸면, <span class="speech-cue">/</span> 그에 맞는 결과가 나와야 합니다. <span class="speech-cue">//</span> 셈웨어는 그 값을 <strong class="speech-emphasis">**정확하게 계산**</strong>하는 시뮬레이션을 만들겠습니다.</p>
         <p>오늘 직접 보신 이 화면 그대로, 34종을 완성하겠습니다.</p>
-        <p>감사합니다.</p>
+        <p>감사합니다. <span class="speech-cue">↓</span></p>
       </div>
     </section>
 
