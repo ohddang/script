@@ -59,4 +59,6 @@
 
 ## 배포
 
-`index.html`을 GitHub Pages 등 정적 호스팅에 올리면 됩니다. 별도의 서버나 빌드가 필요하지 않습니다.
+배포 대상은 **GitHub Pages**이며, 주소는 https://ohddang.github.io/script/ 입니다.
+
+루트 `index.html`의 최종 변경을 커밋한 뒤 `origin`의 `main` 브랜치에 푸시합니다. 별도의 서버나 빌드는 필요하지 않습니다. Sites 플러그인이나 `chatgpt.site`로 배포하지 않습니다.
